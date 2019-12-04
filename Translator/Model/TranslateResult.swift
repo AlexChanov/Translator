@@ -14,4 +14,20 @@ class TranslationResult: Decodable {
     var text: [String]
     /// translation language
     var lang: String
+    
+    var image: [Image]?
 }
+
+
+struct Image : Decodable {
+    
+    let urls : URLs
+}
+
+struct URLs : Decodable {
+    
+    let thumb : String
+    let small: String
+    let full: String
+}
+

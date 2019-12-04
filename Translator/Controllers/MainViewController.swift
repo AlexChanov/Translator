@@ -97,10 +97,9 @@ class MainViewController: UIViewController {
         
         let margins = view.layoutMarginsGuide
         NSLayoutConstraint.activate([
-            buttonLanguage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             buttonLanguage.topAnchor.constraint(equalTo: margins.topAnchor, constant: 0),
-            buttonLanguage.trailingAnchor.constraint(equalToSystemSpacingAfter: view.trailingAnchor, multiplier: -2),
-            buttonLanguage.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 0),
+            buttonLanguage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -2),
+            buttonLanguage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             buttonLanguage.heightAnchor.constraint(equalToConstant: 50),
             translateText.topAnchor.constraint(equalTo: buttonLanguage.bottomAnchor, constant: 50),
             translateText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -108,10 +107,8 @@ class MainViewController: UIViewController {
             translateText.heightAnchor.constraint(equalToConstant: 50),
             tableView.topAnchor.constraint(equalToSystemSpacingBelow: translateText.bottomAnchor, multiplier: 0),
             tableView.bottomAnchor.constraint(equalToSystemSpacingBelow: margins.bottomAnchor, multiplier: 0),
-            tableView.trailingAnchor.constraint(equalToSystemSpacingAfter: view.trailingAnchor, multiplier: -2),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -2),
             tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 0)
-
-            
         ])
     }
     

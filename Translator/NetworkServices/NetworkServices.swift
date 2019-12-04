@@ -10,7 +10,7 @@ import Foundation
 
 final class TranslateNetworkService {
     
-    
+    let apiWrapper = APIWrapper()
     /// Perform request with completion
     ///
     /// - Parameters:
@@ -18,7 +18,7 @@ final class TranslateNetworkService {
     ///   - completion: request response
     private func makeRequest(with params: [String: String], completion: @escaping (Data?, ServiceError?) -> Void) {
         
-        guard let url = makeUrlForTranslate(with: params) else {
+        guard let url = apiWrapper.makeUrlForTranslate(with: params) else {
             completion(nil, .wrongUrl)
             return
         }
@@ -38,21 +38,9 @@ final class TranslateNetworkService {
     ///
     /// - Parameter params: API keys + translate data
     /// - Returns: url
-    private  func makeUrlForTranslate(with params: [String: String]) -> URL? {
-        let parameters = params.map { "\($0)=\($1)" }.joined(separator: "&")
-        let wrapper = APIWrapper()
-        guard let urlString = "\(wrapper.baseURL)?key=\(wrapper.token)&\(parameters)".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed),
-            let url = URL(string: urlString) else { return nil }
-        return url
-    }
+   
     
-    private  func makeUrlForImage(teg: String) -> URL? {
 
-        let wrapper = APIWrapper()
-        guard let urlString = "\(wrapper.baseURL)?key=\(wrapper.token)&\(parameters)".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed),
-            let url = URL(string: urlString) else { return nil }
-        return url
-    }
     
     
     func translate(_ text: String, lang: String, completion: @escaping (TranslationResult?, ServiceError?) -> Void) {
