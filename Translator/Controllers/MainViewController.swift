@@ -47,10 +47,12 @@ class MainViewController: UIViewController {
     
     let networkService = TranslateNetworkService()
     var wordsForTranslate = [String]()
-    var translateValuewArray = [TranslationResult]()
+    var translateValuewArray = [FinalResult]()
     {
         didSet{
-            print(translateValuewArray.last?.text.first)
+//            print(translateValuewArray
+//            print(translateValuewArray.image.first.url)
+
             DispatchQueue.main.async {
                           self.tableView.reloadData()
                       }
@@ -113,6 +115,7 @@ class MainViewController: UIViewController {
     }
     
 }
+
 //MARK: - TableView DataSource and Delegate
 
 extension MainViewController : UITableViewDataSource, UITableViewDelegate {
@@ -134,7 +137,7 @@ extension MainViewController : UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier, for: indexPath)
         let languageCell = cell as? LanguageCellProtocol
         
-        languageCell?.model = translateValuewArray[indexPath.row].text.first
+        languageCell?.model = translateValuewArray[indexPath.row].tranlationResult.text.first
         languageCell?.wordForTranslate = wordsForTranslate[indexPath.row]
         return cell
     }

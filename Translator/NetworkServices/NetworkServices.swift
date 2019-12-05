@@ -11,18 +11,19 @@ import Foundation
 final class TranslateNetworkService {
     
     let apiWrapper = APIWrapper()
+    let group = DispatchGroup()
+    
     /// Perform request with completion
     ///
     /// - Parameters:
     ///   - params: API keys + translate data
     ///   - completion: request response
-    private func makeRequest(with params: [String: String], completion: @escaping (Data?, ServiceError?) -> Void) {
+    private func makeRequestTranslate(with params: [String: String], completion: @escaping (Data?, ServiceError?) -> Void) {
         
         guard let url = apiWrapper.makeUrlForTranslate(with: params) else {
             completion(nil, .wrongUrl)
             return
         }
-        
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
@@ -41,18 +42,80 @@ final class TranslateNetworkService {
    
     
 
+    private func makeRequestImage(with tags: String, completion: @escaping (Data?, ServiceError?) -> Void) {
+        
+        guard let url = apiWrapper.makeUrlForImage(tags: tags) else {
+            completion(nil, .wrongUrl)
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                completion(nil, .remoteServer)
+                return
+            }
+            completion(data,nil)
+        }
+        task.resume()
+    }
     
     
-    func translate(_ text: String, lang: String, completion: @escaping (TranslationResult?, ServiceError?) -> Void) {
+    func translate(_ text: String, lang: String, completion: @escaping (FinalResult?, ServiceError?) -> Void) {
         let params = ["text": text, "lang": lang]
-        makeRequest(with: params) { (data, error) in
+        
+        
+        var resultTranlate: TranslationResult?
+        var resultImage = [Image]()
+
+        
+        group.enter()
+            self.makeRequestTranslate(with: params) { (data, error) in
             guard let data = data else {
                 completion(nil, error)
                 return
             }
             let response = try? JSONDecoder().decode(TranslationResult.self, from: data)
-            completion(response, error)
+            if response != nil {
+                resultTranlate = response
+                self.group.leave()
+            }
         }
+        
+        
+
+      group.wait()
+        guard let tag = resultTranlate?.text.first  else{ return }
+        self.makeRequestImage(with: tag, completion: { (data, error) in
+        
+            guard let data = data else {
+                    completion(nil, error)
+                    return
+                }
+            
+            do {
+                let image = try JSONDecoder().decode([Image].self, from: data)
+                
+                resultImage = image
+                
+                let result = FinalResult(translate: resultTranlate!, image: resultImage)
+
+                completion(result, error)
+            }catch{
+                print("Error serialization json, ", error)
+                completion(nil, error as? ServiceError)
+
+            }
+            
+            })
+        
+        
+
+            
+        
+        
+
+        
+        
     }
     
 }

@@ -7,27 +7,38 @@
 //
 
 import Foundation
+typealias Codable = Decodable & Encodable
+
 
 /// Server response model
-class TranslationResult: Decodable {
+struct TranslationResult: Codable {
     /// translation
     var text: [String]
     /// translation language
     var lang: String
     
-    var image: [Image]?
 }
 
 
-struct Image : Decodable {
-    
+struct Image : Codable {
     let urls : URLs
 }
 
-struct URLs : Decodable {
-    
+struct URLs : Codable {
     let thumb : String
     let small: String
     let full: String
+}
+
+class FinalResult {
+    
+    var tranlationResult: TranslationResult
+    var image = [Image]()
+
+    init(translate: TranslationResult, image: [Image]) {
+        self.tranlationResult = translate
+        self.image = image
+    }
+    
 }
 

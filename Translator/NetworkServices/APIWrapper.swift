@@ -30,7 +30,7 @@ struct APIWrapper {
         return url
     }
     
-     func makeUrlForImage (tags:String) -> URL{
+     func makeUrlForImage (tags:String) -> URL?{
         
         var urlCompanents = URLComponents(string: "https://api.unsplash.com/photos/random" )
 //        let method = URLQueryItem(name: "method", value: "/photos/random")
@@ -42,7 +42,7 @@ struct APIWrapper {
         urlCompanents?.queryItems = [clientId,tags,count,orientation]
         
         print(urlCompanents?.url!)
-        return urlCompanents?.url! ?? URL(string: "https://api.flickr.com/services/rest/")!
+        return urlCompanents?.url! ?? nil
         
     }
 }
