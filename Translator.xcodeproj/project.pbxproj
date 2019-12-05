@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C43A3AC23970057006E34E5 /* SavedWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */; };
+		1CC6A8152398FC2A00E0BC04 /* CollectionViewCellForMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6A8142398FC2A00E0BC04 /* CollectionViewCellForMainView.swift */; };
 		1CD7CEDB2396F58900564C69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7CEDA2396F58900564C69 /* AppDelegate.swift */; };
 		1CD7CEDD2396F58900564C69 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7CEDC2396F58900564C69 /* MainViewController.swift */; };
 		1CD7CEE22396F58A00564C69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CD7CEE12396F58A00564C69 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWordViewController.swift; sourceTree = "<group>"; };
+		1CC6A8142398FC2A00E0BC04 /* CollectionViewCellForMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellForMainView.swift; sourceTree = "<group>"; };
 		1CD7CED72396F58900564C69 /* Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD7CEDA2396F58900564C69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CD7CEDC2396F58900564C69 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -64,10 +66,19 @@
 		1C43A3AA23970001006E34E5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1CD7CEFC2396F74D00564C69 /* TranslateTableViewCell.swift */,
-				1CD7CEFD2396F74D00564C69 /* TranslateTableViewCell.xib */,
+				1CC6A8132398F71100E0BC04 /* MainViewTranslateCell */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1CC6A8132398F71100E0BC04 /* MainViewTranslateCell */ = {
+			isa = PBXGroup;
+			children = (
+				1CD7CEFC2396F74D00564C69 /* TranslateTableViewCell.swift */,
+				1CC6A8142398FC2A00E0BC04 /* CollectionViewCellForMainView.swift */,
+				1CD7CEFD2396F74D00564C69 /* TranslateTableViewCell.xib */,
+			);
+			path = MainViewTranslateCell;
 			sourceTree = "<group>";
 		};
 		1CD7CECE2396F58900564C69 = {
@@ -205,6 +216,7 @@
 				1CD7CEDD2396F58900564C69 /* MainViewController.swift in Sources */,
 				1CD7CEDB2396F58900564C69 /* AppDelegate.swift in Sources */,
 				1CD7CEFE2396F74D00564C69 /* TranslateTableViewCell.swift in Sources */,
+				1CC6A8152398FC2A00E0BC04 /* CollectionViewCellForMainView.swift in Sources */,
 				1C43A3AC23970057006E34E5 /* SavedWordViewController.swift in Sources */,
 				1CD7CEF82396F6C400564C69 /* TranslateResult.swift in Sources */,
 				1CD7CEEF2396F62D00564C69 /* APIWrapper.swift in Sources */,

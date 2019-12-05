@@ -136,9 +136,8 @@ extension MainViewController : UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier, for: indexPath)
         let languageCell = cell as? LanguageCellProtocol
-        
-        languageCell?.model = translateValuewArray[indexPath.row].tranlationResult.text.first
-        languageCell?.wordForTranslate = wordsForTranslate[indexPath.row]
+        languageCell?.setDataforCell(data: translateValuewArray[indexPath.row], wordforTranlate: wordsForTranslate[indexPath.row])
+
         return cell
     }
     
