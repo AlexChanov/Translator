@@ -98,8 +98,9 @@ extension TranslateTableViewCell: UICollectionViewDelegate, UICollectionViewData
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellForMainView.reuseId, for: indexPath) as! CollectionViewCellForMainView
 
-//        cell.imageView.image = 
-        
+        if dataForFilligCell != nil {
+        cell.setPhotoCellWith(photo: dataForFilligCell?.image[indexPath.row])
+        }
         return cell
     }
 }
