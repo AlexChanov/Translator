@@ -6,7 +6,6 @@
 //  Copyright © 2019 Алексей Чанов. All rights reserved.
 //
 
-import UIKit
 
 import UIKit
 
@@ -53,7 +52,12 @@ class TranslateTableViewCell: UITableViewCell, LanguageCellProtocol {
         self.wordForTranslate = wordforTranlate
     }
     
-   private var dataForFilligCell: FinalResult?
+    private var dataForFilligCell: FinalResult?
+    {
+    didSet {
+        self.collectionView.reloadData()
+    }
+}
     
     internal var model: String? {
         didSet {
@@ -61,7 +65,7 @@ class TranslateTableViewCell: UITableViewCell, LanguageCellProtocol {
             accessibilityLabel = model
         }
     }
-    
+    //глянуть почему интернал
     internal var wordForTranslate : String? {
         didSet{
             wordForTranslateLabel.text = wordForTranslate
@@ -75,7 +79,7 @@ class TranslateTableViewCell: UITableViewCell, LanguageCellProtocol {
             shapeLayer.lineCap = .round
             shapeLayer.fillColor = nil
             shapeLayer.strokeEnd = 1
-            let color = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).cgColor
+            let color = UIColor.pureGreen.cgColor
             shapeLayer.strokeColor = color
             
         }
@@ -83,8 +87,6 @@ class TranslateTableViewCell: UITableViewCell, LanguageCellProtocol {
     
     
 }
-
-
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
 
@@ -98,6 +100,7 @@ extension TranslateTableViewCell: UICollectionViewDelegate, UICollectionViewData
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellForMainView.reuseId, for: indexPath) as! CollectionViewCellForMainView
 
+        print(dataForFilligCell?.image[indexPath.row].urls.small)
         if dataForFilligCell != nil {
         cell.setPhotoCellWith(photo: dataForFilligCell?.image[indexPath.row])
         }
@@ -107,12 +110,10 @@ extension TranslateTableViewCell: UICollectionViewDelegate, UICollectionViewData
 
 extension TranslateTableViewCell : UICollectionViewDelegateFlowLayout {
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let sizeCell = CGSize(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width/3)
         
         return sizeCell
     }
-    
 }

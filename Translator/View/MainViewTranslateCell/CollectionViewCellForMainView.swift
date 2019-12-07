@@ -36,9 +36,10 @@ class CollectionViewCellForMainView: UICollectionViewCell {
     }
     
     func setPhotoCellWith(photo: Image?) {
-        guard photo != nil else{ return }
-        let url = photo!.urls.small
+        guard let photo = photo else { return }
+        let url = photo.urls.small
             self.imageView.loadImageUsingCacheWithURLString(url, placeHolder: UIImage(named: "placeholder"))
+        
         
     }
     

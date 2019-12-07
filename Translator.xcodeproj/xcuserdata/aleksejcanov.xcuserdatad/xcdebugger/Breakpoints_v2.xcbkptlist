@@ -28,172 +28,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Translator/NetworkServices/NetworkServices.swift"
-            timestampString = "597239045.872647"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "translate(_:lang:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Translator/Controllers/MainViewController.swift"
-            timestampString = "597239045.87271"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "translateValuewArray"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Translator.MainViewController.translateValuewArray.didset : Swift.Array&lt;Translator.FinalResult&gt;"
-                  moduleName = "Translator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksejcanov/Desktop/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B8%CC%86%20%D1%81%D1%82%D0%BE%D0%BB%20%E2%80%94%20MacBook%20Pro%C2%A0%E2%80%94%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B8%CC%86/Git/TranslatorSber/Translator/Controllers/MainViewController.swift"
-                  timestampString = "597226847.758714"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "144">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Translator.MainViewController.translateValuewArray.didset : Swift.Array&lt;Translator.FinalResult&gt;"
-                  moduleName = "Translator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksejcanov/Desktop/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B8%CC%86%20%D1%81%D1%82%D0%BE%D0%BB%20%E2%80%94%20MacBook%20Pro%C2%A0%E2%80%94%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B8%CC%86/Git/TranslatorSber/Translator/Controllers/MainViewController.swift"
-                  timestampString = "597226847.760774"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "22">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Translator/NetworkServices/NetworkServices.swift"
-            timestampString = "597239045.8727601"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "makeRequestTranslate(with:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Translator/NetworkServices/NetworkServices.swift"
-            timestampString = "597239045.8728009"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "translate(_:lang:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Translator.TranslateNetworkService.translate(_: Swift.String, lang: Swift.String, completion: (Swift.Optional&lt;Translator.FinalResult&gt;, Swift.Optional&lt;Translator.ServiceError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Translator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksejcanov/Desktop/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B8%CC%86%20%D1%81%D1%82%D0%BE%D0%BB%20%E2%80%94%20MacBook%20Pro%C2%A0%E2%80%94%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B8%CC%86/Git/TranslatorSber/Translator/NetworkServices/NetworkServices.swift"
-                  timestampString = "597226847.770762"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "1592">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Translator.ServiceError&gt;) -&gt; () in Translator.TranslateNetworkService.translate(_: Swift.String, lang: Swift.String, completion: (Swift.Optional&lt;Translator.FinalResult&gt;, Swift.Optional&lt;Translator.ServiceError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Translator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksejcanov/Desktop/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B8%CC%86%20%D1%81%D1%82%D0%BE%D0%BB%20%E2%80%94%20MacBook%20Pro%C2%A0%E2%80%94%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B8%CC%86/Git/TranslatorSber/Translator/NetworkServices/NetworkServices.swift"
-                  timestampString = "597226847.772544"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "215">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Translator/NetworkServices/NetworkServices.swift"
-            timestampString = "597239045.872839"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "translate(_:lang:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Translator/NetworkServices/NetworkServices.swift"
-            timestampString = "597239045.872878"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "translate(_:lang:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Translator/NetworkServices/NetworkServices.swift"
-            timestampString = "597239045.872916"
+            timestampString = "597427271.9847209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
             endingLineNumber = "104"
             landmarkName = "translate(_:lang:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Translator/View/MainViewTranslateCell/CollectionViewCellForMainView.swift"
+            timestampString = "597436606.949036"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "setPhotoCellWith(photo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Translator/View/MainViewTranslateCell/TranslateTableViewCell.swift"
+            timestampString = "597436606.9491121"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

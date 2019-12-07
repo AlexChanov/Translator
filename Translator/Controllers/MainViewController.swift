@@ -75,9 +75,10 @@ class MainViewController: UIViewController {
     
     
     
-    private func getTranslate(_ text: String, _ lang: String) {
+    private func getTranslate(_ text: String, _ lang: String = "en") {
         networkService.translate(text, lang: lang) { (result, error) in
             guard let result = result else {return}
+//            print("look -",result.image.first?.urls.small)
             self.addElementToArrayInReverseOrder(array: &self.translateValuewArray, newElement: result)
         }
     }
@@ -91,6 +92,7 @@ class MainViewController: UIViewController {
     
     
     // MARK: - Setup constraints
+    
     private func setupLayout() {
         
         self.view.addSubview(buttonLanguage)
@@ -116,7 +118,7 @@ class MainViewController: UIViewController {
     
 }
 
-//MARK: - TableView DataSource and Delegate
+    //MARK: - TableView DataSource and Delegate
 
 extension MainViewController : UITableViewDataSource, UITableViewDelegate {
     
@@ -137,13 +139,17 @@ extension MainViewController : UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier, for: indexPath)
         let languageCell = cell as? LanguageCellProtocol
         languageCell?.setDataforCell(data: translateValuewArray[indexPath.row], wordforTranlate: wordsForTranslate[indexPath.row])
-
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
 
-//MARK: - TextField Delegate
+    //MARK: - TextField Delegate
 
 extension MainViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -152,7 +158,7 @@ extension MainViewController : UITextFieldDelegate {
         guard let text = textField.text else {return true}
         
         addElementToArrayInReverseOrder(array: &wordsForTranslate, newElement: text)
-        getTranslate(text, "en")
+        getTranslate(text)
         textField.text = ""
         
         
