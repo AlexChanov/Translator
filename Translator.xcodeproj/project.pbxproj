@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C43A3AC23970057006E34E5 /* SavedWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */; };
+		1CAFB7F9239D9222006CC71A /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAFB7F8239D9222006CC71A /* SavedTableViewCell.swift */; };
 		1CC6A8152398FC2A00E0BC04 /* CollectionViewCellForMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6A8142398FC2A00E0BC04 /* CollectionViewCellForMainView.swift */; };
 		1CC6A8172399201000E0BC04 /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6A8162399201000E0BC04 /* Extension + UIImageView.swift */; };
 		1CD4EB35239C3C0100AC79A2 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD4EB34239C3C0100AC79A2 /* Extension + UIViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWordViewController.swift; sourceTree = "<group>"; };
+		1CAFB7F8239D9222006CC71A /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		1CC6A8142398FC2A00E0BC04 /* CollectionViewCellForMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellForMainView.swift; sourceTree = "<group>"; };
 		1CC6A8162399201000E0BC04 /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
 		1CD4EB34239C3C0100AC79A2 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
@@ -66,38 +68,64 @@
 		1C43A3A92396FFF1006E34E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1CD7CEEC2396F5E900564C69 /* BaseTabBarController.swift */,
-				1CD7CEDC2396F58900564C69 /* MainViewController.swift */,
-				1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */,
+				1CAFB7FD239D9439006CC71A /* MainViewController */,
+				1CAFB7FA239D93EA006CC71A /* SavedViewController */,
 				1CD4EB3C239C400100AC79A2 /* NewTranslatedWordViewController */,
+				1CD7CEEC2396F5E900564C69 /* BaseTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		1C43A3AA23970001006E34E5 /* View */ = {
+		1CAFB7FA239D93EA006CC71A /* SavedViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1CC6A8132398F71100E0BC04 /* MainViewTranslateCell */,
+				1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */,
+				1CAFB7FC239D941D006CC71A /* View */,
+			);
+			path = SavedViewController;
+			sourceTree = "<group>";
+		};
+		1CAFB7FB239D9408006CC71A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CD4EB39239C3ECD00AC79A2 /* NewTranslatedWordViewController.xib */,
+				1CD4EB3D239C447200AC79A2 /* NewTranslatedWordCollectionViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1CAFB7FC239D941D006CC71A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CAFB7F8239D9222006CC71A /* SavedTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		1CC6A8132398F71100E0BC04 /* MainViewTranslateCell */ = {
+		1CAFB7FD239D9439006CC71A /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1CD7CEDC2396F58900564C69 /* MainViewController.swift */,
+				1CAFB7FE239D9453006CC71A /* View */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		1CAFB7FE239D9453006CC71A /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1CD7CEFC2396F74D00564C69 /* TranslateTableViewCell.swift */,
-				1CC6A8142398FC2A00E0BC04 /* CollectionViewCellForMainView.swift */,
 				1CD7CEFD2396F74D00564C69 /* TranslateTableViewCell.xib */,
+				1CC6A8142398FC2A00E0BC04 /* CollectionViewCellForMainView.swift */,
 			);
-			path = MainViewTranslateCell;
+			path = View;
 			sourceTree = "<group>";
 		};
 		1CD4EB3C239C400100AC79A2 /* NewTranslatedWordViewController */ = {
 			isa = PBXGroup;
 			children = (
 				1CD4EB38239C3ECD00AC79A2 /* NewTranslatedWordViewController.swift */,
-				1CD4EB39239C3ECD00AC79A2 /* NewTranslatedWordViewController.xib */,
-				1CD4EB3D239C447200AC79A2 /* NewTranslatedWordCollectionViewCell.swift */,
+				1CAFB7FB239D9408006CC71A /* View */,
 			);
 			path = NewTranslatedWordViewController;
 			sourceTree = "<group>";
@@ -122,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				1C43A3A92396FFF1006E34E5 /* Controllers */,
-				1C43A3AA23970001006E34E5 /* View */,
 				1CD7CEF42396F68E00564C69 /* Model */,
 				1CD7CEF32396F66900564C69 /* NetworkServices */,
 				1CD7CEF92396F6E200564C69 /* Support file */,
@@ -243,6 +270,7 @@
 				1CD7CEFE2396F74D00564C69 /* TranslateTableViewCell.swift in Sources */,
 				1CC6A8152398FC2A00E0BC04 /* CollectionViewCellForMainView.swift in Sources */,
 				1CD4EB35239C3C0100AC79A2 /* Extension + UIViewController.swift in Sources */,
+				1CAFB7F9239D9222006CC71A /* SavedTableViewCell.swift in Sources */,
 				1C43A3AC23970057006E34E5 /* SavedWordViewController.swift in Sources */,
 				1CD4EB3A239C3ECD00AC79A2 /* NewTranslatedWordViewController.swift in Sources */,
 				1CC6A8172399201000E0BC04 /* Extension + UIImageView.swift in Sources */,

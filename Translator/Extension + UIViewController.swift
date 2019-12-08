@@ -38,7 +38,6 @@ extension UIViewController {
         
         // MARK: - remove blurEffect
         guard let subViewCount = (parent?.view.subviews.count) else { return }
-        
         let subView = parent?.view.subviews[subViewCount - 2]
         subView?.removeFromSuperview()
         

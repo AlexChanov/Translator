@@ -41,11 +41,13 @@ class NewTranslatedWordViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = true        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        remove()
+        tabBarController?.tabBar.isHidden = false
+
     }
     
     // MARK: - Init properties

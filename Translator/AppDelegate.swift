@@ -38,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.pureGreen], for: .selected)
         
-        
         window = UIWindow()
         window?.makeKeyAndVisible()
         window?.rootViewController = BaseTabBarController()

@@ -103,19 +103,8 @@ final class TranslateNetworkService {
             }catch{
                 print("Error serialization json, ", error)
                 completion(nil, error as? ServiceError)
-
             }
-            
             })
-        
-        
-
-            
-        
-        
-
-        
-        
     }
     
 }

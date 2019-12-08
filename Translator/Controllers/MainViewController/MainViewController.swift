@@ -88,8 +88,6 @@ class MainViewController: UIViewController {
         let newTranslatedViewContriller = NewTranslatedWordViewController()
         newTranslatedViewContriller.dataForFilligCell = result
         newTranslatedViewContriller.wordforTranlate = self.wordsForTranslate.first ?? ""
-        
-        
        
         DispatchQueue.main.async {
 
