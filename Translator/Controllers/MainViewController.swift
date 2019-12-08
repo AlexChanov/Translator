@@ -10,6 +10,13 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let activity = UIActivityIndicatorView(style: .gray)
+        activity.translatesAutoresizingMaskIntoConstraints = false
+        return activity
+    }()
+    
     lazy var buttonLanguage: UIButton = {
         let button = UIButton.init(type: .roundedRect)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -18,52 +25,48 @@ class MainViewController: UIViewController {
         button.layer.shadowOpacity = 0.5
         button.layer.shadowRadius = 5
         button.backgroundColor = UIColor.white
-        button.setTitle("Выберите язык", for:  .normal)
+        button.setTitle("🇷🇺  ➔  🇺🇸", for:  .normal)
+        button.titleLabel?.font =  UIFont.boldSystemFont(ofSize: 40)
+        button.setTitleColor(UIColor.pureGreen, for: .normal)
+        button.titleColor(for: )
         button.addTarget(self, action: #selector(buttonClicked(_ :)), for: .touchUpInside)
         return button
     }()
     
-   lazy var translateText: UITextField = {
+    lazy var translateText: UITextField = {
         var textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-              textField.backgroundColor = .yellow
-              textField.borderStyle = .bezel
-              textField.keyboardAppearance = .light
-              textField.placeholder = "Введите слово для перевода"
-              textField.delegate = self
+        textField.backgroundColor = .yellow
+        textField.borderStyle = .bezel
+        textField.keyboardAppearance = .light
+        textField.placeholder = "Введите слово для перевода"
+        textField.delegate = self
         return textField
     }()
     
     lazy var tableView: UITableView = {
-           var viewForTable = UITableView()
-           viewForTable.delegate = self
-           viewForTable.dataSource = self
-           viewForTable.backgroundColor = .clear
-           viewForTable.register(tableViewCellNiB, forCellReuseIdentifier: reusableCellIdentifier)
-           viewForTable.translatesAutoresizingMaskIntoConstraints = false
-           viewForTable.rowHeight = 200
-           return viewForTable
-       }()
+        var viewForTable = UITableView()
+        viewForTable.delegate = self
+        viewForTable.dataSource = self
+        viewForTable.backgroundColor = .clear
+        viewForTable.register(tableViewCellNiB, forCellReuseIdentifier: reusableCellIdentifier)
+        viewForTable.translatesAutoresizingMaskIntoConstraints = false
+        viewForTable.rowHeight = 200
+        return viewForTable
+    }()
     
     let networkService = TranslateNetworkService()
     var wordsForTranslate = [String]()
     var translateValuewArray = [FinalResult]()
     {
         didSet{
-//            print(translateValuewArray
-//            print(translateValuewArray.image.first.url)
-
             DispatchQueue.main.async {
-                          self.tableView.reloadData()
-                      }
+                self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
+            }
         }
     }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupLayout()
@@ -73,13 +76,25 @@ class MainViewController: UIViewController {
         print("Tap in button")
     }
     
-    
-    
     private func getTranslate(_ text: String, _ lang: String = "en") {
         networkService.translate(text, lang: lang) { (result, error) in
             guard let result = result else {return}
-//            print("look -",result.image.first?.urls.small)
             self.addElementToArrayInReverseOrder(array: &self.translateValuewArray, newElement: result)
+            self.presentView(result)
+        }
+    }
+    
+    private func presentView(_ result: FinalResult) {
+        let newTranslatedViewContriller = NewTranslatedWordViewController()
+        newTranslatedViewContriller.dataForFilligCell = result
+        newTranslatedViewContriller.wordforTranlate = self.wordsForTranslate.first ?? ""
+        
+        
+       
+        DispatchQueue.main.async {
+
+            self.add(newTranslatedViewContriller, frame: CGRect(x: self.view.frame.minX, y: self.view.frame.minY-100, width: self.view.frame.width, height: self.view.frame.height*0.8))
+            
         }
     }
     
@@ -92,9 +107,9 @@ class MainViewController: UIViewController {
     
     
     // MARK: - Setup constraints
-    
     private func setupLayout() {
         
+        self.view.addSubview(activityIndicator)
         self.view.addSubview(buttonLanguage)
         self.view.addSubview(translateText)
         self.view.addSubview(tableView)
@@ -112,14 +127,15 @@ class MainViewController: UIViewController {
             tableView.topAnchor.constraint(equalToSystemSpacingBelow: translateText.bottomAnchor, multiplier: 0),
             tableView.bottomAnchor.constraint(equalToSystemSpacingBelow: margins.bottomAnchor, multiplier: 0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -2),
-            tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 0)
-        ])
+            tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 0),
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            ])
     }
     
 }
 
-    //MARK: - TableView DataSource and Delegate
-
+//MARK: - TableView DataSource and Delegate
 extension MainViewController : UITableViewDataSource, UITableViewDelegate {
     
     private var tableViewCellNiB : UINib {
@@ -149,7 +165,7 @@ extension MainViewController : UITableViewDataSource, UITableViewDelegate {
     
 }
 
-    //MARK: - TextField Delegate
+//MARK: - TextField Delegate
 
 extension MainViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -160,6 +176,7 @@ extension MainViewController : UITextFieldDelegate {
         addElementToArrayInReverseOrder(array: &wordsForTranslate, newElement: text)
         getTranslate(text)
         textField.text = ""
+        activityIndicator.startAnimating()
         
         
         print(wordsForTranslate)

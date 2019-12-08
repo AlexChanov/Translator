@@ -10,6 +10,10 @@
 		1C43A3AC23970057006E34E5 /* SavedWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */; };
 		1CC6A8152398FC2A00E0BC04 /* CollectionViewCellForMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6A8142398FC2A00E0BC04 /* CollectionViewCellForMainView.swift */; };
 		1CC6A8172399201000E0BC04 /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6A8162399201000E0BC04 /* Extension + UIImageView.swift */; };
+		1CD4EB35239C3C0100AC79A2 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD4EB34239C3C0100AC79A2 /* Extension + UIViewController.swift */; };
+		1CD4EB3A239C3ECD00AC79A2 /* NewTranslatedWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD4EB38239C3ECD00AC79A2 /* NewTranslatedWordViewController.swift */; };
+		1CD4EB3B239C3ECD00AC79A2 /* NewTranslatedWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CD4EB39239C3ECD00AC79A2 /* NewTranslatedWordViewController.xib */; };
+		1CD4EB3E239C447200AC79A2 /* NewTranslatedWordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD4EB3D239C447200AC79A2 /* NewTranslatedWordCollectionViewCell.swift */; };
 		1CD7CEDB2396F58900564C69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7CEDA2396F58900564C69 /* AppDelegate.swift */; };
 		1CD7CEDD2396F58900564C69 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7CEDC2396F58900564C69 /* MainViewController.swift */; };
 		1CD7CEE22396F58A00564C69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CD7CEE12396F58A00564C69 /* Assets.xcassets */; };
@@ -28,6 +32,10 @@
 		1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWordViewController.swift; sourceTree = "<group>"; };
 		1CC6A8142398FC2A00E0BC04 /* CollectionViewCellForMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellForMainView.swift; sourceTree = "<group>"; };
 		1CC6A8162399201000E0BC04 /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
+		1CD4EB34239C3C0100AC79A2 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
+		1CD4EB38239C3ECD00AC79A2 /* NewTranslatedWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTranslatedWordViewController.swift; sourceTree = "<group>"; };
+		1CD4EB39239C3ECD00AC79A2 /* NewTranslatedWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTranslatedWordViewController.xib; sourceTree = "<group>"; };
+		1CD4EB3D239C447200AC79A2 /* NewTranslatedWordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTranslatedWordCollectionViewCell.swift; sourceTree = "<group>"; };
 		1CD7CED72396F58900564C69 /* Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD7CEDA2396F58900564C69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CD7CEDC2396F58900564C69 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +69,7 @@
 				1CD7CEEC2396F5E900564C69 /* BaseTabBarController.swift */,
 				1CD7CEDC2396F58900564C69 /* MainViewController.swift */,
 				1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */,
+				1CD4EB3C239C400100AC79A2 /* NewTranslatedWordViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -81,6 +90,16 @@
 				1CD7CEFD2396F74D00564C69 /* TranslateTableViewCell.xib */,
 			);
 			path = MainViewTranslateCell;
+			sourceTree = "<group>";
+		};
+		1CD4EB3C239C400100AC79A2 /* NewTranslatedWordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1CD4EB38239C3ECD00AC79A2 /* NewTranslatedWordViewController.swift */,
+				1CD4EB39239C3ECD00AC79A2 /* NewTranslatedWordViewController.xib */,
+				1CD4EB3D239C447200AC79A2 /* NewTranslatedWordCollectionViewCell.swift */,
+			);
+			path = NewTranslatedWordViewController;
 			sourceTree = "<group>";
 		};
 		1CD7CECE2396F58900564C69 = {
@@ -135,6 +154,7 @@
 				1CD7CEDA2396F58900564C69 /* AppDelegate.swift */,
 				1CD7CEFA2396F70100564C69 /* Extension + UIColor.swift */,
 				1CC6A8162399201000E0BC04 /* Extension + UIImageView.swift */,
+				1CD4EB34239C3C0100AC79A2 /* Extension + UIViewController.swift */,
 				1CD7CEE12396F58A00564C69 /* Assets.xcassets */,
 				1CD7CEE62396F58A00564C69 /* Info.plist */,
 				1CD7CEE32396F58A00564C69 /* LaunchScreen.storyboard */,
@@ -203,6 +223,7 @@
 				1CD7CEE52396F58A00564C69 /* LaunchScreen.storyboard in Resources */,
 				1CD7CEE22396F58A00564C69 /* Assets.xcassets in Resources */,
 				1CD7CEFF2396F74D00564C69 /* TranslateTableViewCell.xib in Resources */,
+				1CD4EB3B239C3ECD00AC79A2 /* NewTranslatedWordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,11 +237,14 @@
 				1CD7CEF62396F6A500564C69 /* ServiceError.swift in Sources */,
 				1CD7CEFB2396F70100564C69 /* Extension + UIColor.swift in Sources */,
 				1CD7CEF12396F64700564C69 /* NetworkServices.swift in Sources */,
+				1CD4EB3E239C447200AC79A2 /* NewTranslatedWordCollectionViewCell.swift in Sources */,
 				1CD7CEDD2396F58900564C69 /* MainViewController.swift in Sources */,
 				1CD7CEDB2396F58900564C69 /* AppDelegate.swift in Sources */,
 				1CD7CEFE2396F74D00564C69 /* TranslateTableViewCell.swift in Sources */,
 				1CC6A8152398FC2A00E0BC04 /* CollectionViewCellForMainView.swift in Sources */,
+				1CD4EB35239C3C0100AC79A2 /* Extension + UIViewController.swift in Sources */,
 				1C43A3AC23970057006E34E5 /* SavedWordViewController.swift in Sources */,
+				1CD4EB3A239C3ECD00AC79A2 /* NewTranslatedWordViewController.swift in Sources */,
 				1CC6A8172399201000E0BC04 /* Extension + UIImageView.swift in Sources */,
 				1CD7CEF82396F6C400564C69 /* TranslateResult.swift in Sources */,
 				1CD7CEEF2396F62D00564C69 /* APIWrapper.swift in Sources */,

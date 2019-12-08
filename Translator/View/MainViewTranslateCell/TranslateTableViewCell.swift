@@ -100,13 +100,14 @@ extension TranslateTableViewCell: UICollectionViewDelegate, UICollectionViewData
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellForMainView.reuseId, for: indexPath) as! CollectionViewCellForMainView
 
-        print(dataForFilligCell?.image[indexPath.row].urls.small)
         if dataForFilligCell != nil {
-        cell.setPhotoCellWith(photo: dataForFilligCell?.image[indexPath.row])
+        cell.setPhotoInCell(photo: dataForFilligCell?.image[indexPath.row])
         }
         return cell
     }
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension TranslateTableViewCell : UICollectionViewDelegateFlowLayout {
     

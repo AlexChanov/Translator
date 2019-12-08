@@ -1,27 +1,24 @@
 //
-//  CollectionViewCellForMainView.swift
+//  NewTranslatedWordCollectionViewCell.swift
 //  Translator
 //
-//  Created by Алексей ]Чанов on 05/12/2019.
+//  Created by Алексей ]Чанов on 07/12/2019.
 //  Copyright © 2019 Алексей Чанов. All rights reserved.
 //
 
 import UIKit
 
-class CollectionViewCellForMainView: UICollectionViewCell {
+class NewTranslatedWordCollectionViewCell: UICollectionViewCell {
     
-  static let reuseId = "MainCollectionViewCell"
+    static let reuseId = "newTranslatedWordCollectionViewCell"
     
-    
-    let imageView: UIImageView = {
+   private let imageView: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .pureGreen
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.layer.cornerRadius = 40
         return image
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,14 +28,12 @@ class CollectionViewCellForMainView: UICollectionViewCell {
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive       = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive     = true
         imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive   = true
-        
-        
     }
     
     func setPhotoInCell(photo: Image?) {
         guard let photo = photo else { return }
         let url = photo.urls.small
-            self.imageView.loadImageUsingCacheWithURLString(url, placeHolder: UIImage(named: "placeholder"))
+        self.imageView.loadImageUsingCacheWithURLString(url, placeHolder: UIImage(named: "placeholder"))
     }
     
     required init?(coder aDecoder: NSCoder) {
