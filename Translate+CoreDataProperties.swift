@@ -17,8 +17,26 @@ extension Translate {
         return NSFetchRequest<Translate>(entityName: "Translate")
     }
 
+    @NSManaged public var imagePath: String?
     @NSManaged public var text: String?
     @NSManaged public var wordForTranslate: String?
-    @NSManaged public var imagePath: String?
+    @NSManaged public var imageUrl: NSSet?
+
+}
+
+// MARK: Generated accessors for imageUrl
+extension Translate {
+
+    @objc(addImageUrlObject:)
+    @NSManaged public func addToImageUrl(_ value: ImageUrl)
+
+    @objc(removeImageUrlObject:)
+    @NSManaged public func removeFromImageUrl(_ value: ImageUrl)
+
+    @objc(addImageUrl:)
+    @NSManaged public func addToImageUrl(_ values: NSSet)
+
+    @objc(removeImageUrl:)
+    @NSManaged public func removeFromImageUrl(_ values: NSSet)
 
 }
