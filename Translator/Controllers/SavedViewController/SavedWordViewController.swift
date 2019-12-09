@@ -53,6 +53,11 @@ extension SavedWordViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SavedTableViewCell.reuseId, for: indexPath)
+        
+//        if let photo = fetchedhResultController.object(at: indexPath) as? Photo {
+//            cell.setPhotoCellWith(photo: photo)
+//        }
+        
         return cell
     }
     

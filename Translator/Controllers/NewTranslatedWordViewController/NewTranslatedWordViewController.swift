@@ -21,6 +21,24 @@ class NewTranslatedWordViewController: UIViewController {
         remove()
     }
     
+    @IBAction func saveButton(_ sender: Any) {
+        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+
+        guard  let translate = NSEntityDescription.insertNewObject(forEntityName: "Translate", into: context) as? Translate else {return}
+        
+        translate.text = dataForFilligCell?.tranlationResult.text.first
+        translate.wordForTranslate = wordforTranlate
+        
+        do {
+            try context.save()
+            
+        } catch {
+            print(error)
+        }
+    }
+    
+    
+    
     // MARK: - Public Properties
     var dataForFilligCell: FinalResult?
     var wordforTranlate = ""
