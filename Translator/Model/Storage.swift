@@ -10,15 +10,32 @@ import UIKit
 import CoreData
 
 
-class Stroage {
+class Storage {
     
     static func saveImage(_ url : String) -> ImageUrl {
   
         let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "ImageUrl", in: context)
         let imageUrlEntity = NSManagedObject(entity: entity!, insertInto: context) as! ImageUrl
-//        imageUrlEntity
+        imageUrlEntity.imagePath = url
         return imageUrlEntity
+    }
+    
+    static func saveTranslateInfo(wordForTranslate : String, translatedWord: String) -> Translate? {
+        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Translate", in: context)
+        let translateEntity = NSManagedObject(entity: entity!, insertInto: context) as! Translate
+        translateEntity.text = translatedWord
+        translateEntity.wordForTranslate = wordForTranslate
+        
+        do {
+            try context.save()
+            print("Save! Good Job!")
+            return translateEntity
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
     }
         
 }

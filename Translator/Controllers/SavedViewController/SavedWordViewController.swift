@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 
 final class SavedWordViewController: UIViewController {
-
     
-    lazy var tableView: UITableView = {
+    // MARK: - Private properties
+    lazy private var tableView: UITableView = {
         var viewForTable = UITableView()
         viewForTable.delegate = self
         viewForTable.dataSource = self
@@ -23,7 +23,7 @@ final class SavedWordViewController: UIViewController {
         return viewForTable
     }()
     
-    lazy var fetchedhResultController: NSFetchedResultsController<NSFetchRequestResult> = {
+    lazy private var fetchedhResultController: NSFetchedResultsController<NSFetchRequestResult> = {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Translate.self))
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "wordForTranslate", ascending: true)]
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.sharedInstance.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
@@ -31,40 +31,65 @@ final class SavedWordViewController: UIViewController {
         return frc
     }()
     
+    
+    // MARK: - UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        performTableContent()
+        
         self.view.addSubview(tableView)
         
         let margins = view.layoutMarginsGuide
         NSLayoutConstraint.activate([
-        tableView.topAnchor.constraint(equalToSystemSpacingBelow: margins.topAnchor, multiplier: 0),
-        tableView.bottomAnchor.constraint(equalToSystemSpacingBelow: margins.bottomAnchor, multiplier: 0),
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -2),
-        tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 0)])
+            tableView.topAnchor.constraint(equalToSystemSpacingBelow: margins.topAnchor, multiplier: 0),
+            tableView.bottomAnchor.constraint(equalToSystemSpacingBelow: margins.bottomAnchor, multiplier: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -2),
+            tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 0)])
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
+    
+    // MARK: - FetchedhResultController perform fetch
+    private func performTableContent() {
+        do {
+            try self.fetchedhResultController.performFetch()
+            print("COUNT FETCHED FIRST: \(self.fetchedhResultController.sections?[0].numberOfObjects ?? 0)")
+        } catch let error  {
+            print("ERROR: \(error)")
+        }
     }
 }
 
 
+// MARK: - UITableViewDelegate & UITableViewDataSource
 extension SavedWordViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 4
+        if let count = fetchedhResultController.sections?.first?.numberOfObjects {
+            return count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SavedTableViewCell.reuseId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: SavedTableViewCell.reuseId, for: indexPath) as! SavedTableViewCell
         
-//        if let photo = fetchedhResultController.object(at: indexPath) as? Photo {
-//            cell.setPhotoCellWith(photo: photo)
-//        }
-        
+        if let object = fetchedhResultController.object(at: indexPath) as? Translate {
+            cell.setContentCellWith(data: object)
+        }
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }
 
+// MARK: - NSFetchedResultsControllerDelegate
 extension SavedWordViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {

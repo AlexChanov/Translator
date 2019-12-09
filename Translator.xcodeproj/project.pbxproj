@@ -85,7 +85,6 @@
 				1CAFB7FD239D9439006CC71A /* MainViewController */,
 				1CAFB7FA239D93EA006CC71A /* SavedViewController */,
 				1CD4EB3C239C400100AC79A2 /* NewTranslatedWordViewController */,
-				1CD7CEEC2396F5E900564C69 /* BaseTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -208,6 +207,7 @@
 		1CD7CEF92396F6E200564C69 /* Support file */ = {
 			isa = PBXGroup;
 			children = (
+				1CD7CEEC2396F5E900564C69 /* BaseTabBarController.swift */,
 				1CD7CEDA2396F58900564C69 /* AppDelegate.swift */,
 				1CD7CEFA2396F70100564C69 /* Extension + UIColor.swift */,
 				1CC6A8162399201000E0BC04 /* Extension + UIImageView.swift */,

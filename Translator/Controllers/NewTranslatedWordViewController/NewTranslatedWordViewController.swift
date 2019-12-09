@@ -21,20 +21,19 @@ class NewTranslatedWordViewController: UIViewController {
         remove()
     }
     
+    // MARK: - Save in CoreData
     @IBAction func saveButton(_ sender: Any) {
-        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
 
-        guard  let translate = NSEntityDescription.insertNewObject(forEntityName: "Translate", into: context) as? Translate else {return}
+        guard let dataForFilligCell = dataForFilligCell else { return }
+        guard let wordWhichWasTranslated = dataForFilligCell.tranlationResult.text.first else { return }
+
+        let saveInfo = Storage.saveTranslateInfo(wordForTranslate: wordforTranlate, translatedWord: wordWhichWasTranslated)
         
-        translate.text = dataForFilligCell?.tranlationResult.text.first
-        translate.wordForTranslate = wordforTranlate
-        
-        do {
-            try context.save()
-            
-        } catch {
-            print(error)
+        for value in dataForFilligCell.image {
+        let saveImage = Storage.saveImage(value.urls.small)
+        saveImage.translate = saveInfo
         }
+        CoreDataStack.sharedInstance.saveContext()
     }
     
     
