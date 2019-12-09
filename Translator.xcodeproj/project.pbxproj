@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1C43A3AC23970057006E34E5 /* SavedWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */; };
+		1C47A923239E66D8009203C5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C47A921239E66D8009203C5 /* Model.xcdatamodeld */; };
+		1C47A926239E68DA009203C5 /* Translate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C47A924239E68DA009203C5 /* Translate+CoreDataClass.swift */; };
+		1C47A927239E68DA009203C5 /* Translate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C47A925239E68DA009203C5 /* Translate+CoreDataProperties.swift */; };
+		1C47A92A239E6925009203C5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C47A929239E6924009203C5 /* CoreDataStack.swift */; };
 		1CAFB7F9239D9222006CC71A /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAFB7F8239D9222006CC71A /* SavedTableViewCell.swift */; };
 		1CC6A8152398FC2A00E0BC04 /* CollectionViewCellForMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6A8142398FC2A00E0BC04 /* CollectionViewCellForMainView.swift */; };
 		1CC6A8172399201000E0BC04 /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6A8162399201000E0BC04 /* Extension + UIImageView.swift */; };
@@ -31,6 +35,10 @@
 
 /* Begin PBXFileReference section */
 		1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWordViewController.swift; sourceTree = "<group>"; };
+		1C47A922239E66D8009203C5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		1C47A924239E68DA009203C5 /* Translate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Translate+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1C47A925239E68DA009203C5 /* Translate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Translate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1C47A929239E6924009203C5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1CAFB7F8239D9222006CC71A /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		1CC6A8142398FC2A00E0BC04 /* CollectionViewCellForMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellForMainView.swift; sourceTree = "<group>"; };
 		1CC6A8162399201000E0BC04 /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
@@ -74,6 +82,18 @@
 				1CD7CEEC2396F5E900564C69 /* BaseTabBarController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1C47A928239E68F3009203C5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1C47A929239E6924009203C5 /* CoreDataStack.swift */,
+				1C47A924239E68DA009203C5 /* Translate+CoreDataClass.swift */,
+				1C47A925239E68DA009203C5 /* Translate+CoreDataProperties.swift */,
+				1C47A921239E66D8009203C5 /* Model.xcdatamodeld */,
+			);
+			name = CoreData;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		1CAFB7FA239D93EA006CC71A /* SavedViewController */ = {
@@ -152,6 +172,7 @@
 				1C43A3A92396FFF1006E34E5 /* Controllers */,
 				1CD7CEF42396F68E00564C69 /* Model */,
 				1CD7CEF32396F66900564C69 /* NetworkServices */,
+				1C47A928239E68F3009203C5 /* CoreData */,
 				1CD7CEF92396F6E200564C69 /* Support file */,
 			);
 			path = Translator;
@@ -261,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C47A926239E68DA009203C5 /* Translate+CoreDataClass.swift in Sources */,
 				1CD7CEF62396F6A500564C69 /* ServiceError.swift in Sources */,
 				1CD7CEFB2396F70100564C69 /* Extension + UIColor.swift in Sources */,
 				1CD7CEF12396F64700564C69 /* NetworkServices.swift in Sources */,
@@ -269,10 +291,13 @@
 				1CD7CEDB2396F58900564C69 /* AppDelegate.swift in Sources */,
 				1CD7CEFE2396F74D00564C69 /* TranslateTableViewCell.swift in Sources */,
 				1CC6A8152398FC2A00E0BC04 /* CollectionViewCellForMainView.swift in Sources */,
+				1C47A923239E66D8009203C5 /* Model.xcdatamodeld in Sources */,
+				1C47A927239E68DA009203C5 /* Translate+CoreDataProperties.swift in Sources */,
 				1CD4EB35239C3C0100AC79A2 /* Extension + UIViewController.swift in Sources */,
 				1CAFB7F9239D9222006CC71A /* SavedTableViewCell.swift in Sources */,
 				1C43A3AC23970057006E34E5 /* SavedWordViewController.swift in Sources */,
 				1CD4EB3A239C3ECD00AC79A2 /* NewTranslatedWordViewController.swift in Sources */,
+				1C47A92A239E6925009203C5 /* CoreDataStack.swift in Sources */,
 				1CC6A8172399201000E0BC04 /* Extension + UIImageView.swift in Sources */,
 				1CD7CEF82396F6C400564C69 /* TranslateResult.swift in Sources */,
 				1CD7CEEF2396F62D00564C69 /* APIWrapper.swift in Sources */,
@@ -466,6 +491,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1C47A921239E66D8009203C5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1C47A922239E66D8009203C5 /* Model.xcdatamodel */,
+			);
+			currentVersion = 1C47A922239E66D8009203C5 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1CD7CECF2396F58900564C69 /* Project object */;
 }

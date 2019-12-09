@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 final class SavedWordViewController: UIViewController {
 
@@ -20,6 +21,14 @@ final class SavedWordViewController: UIViewController {
         viewForTable.translatesAutoresizingMaskIntoConstraints = false
         viewForTable.rowHeight = 100
         return viewForTable
+    }()
+    
+    lazy var fetchedhResultController: NSFetchedResultsController<NSFetchRequestResult> = {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Translate.self))
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "wordForTranslate", ascending: true)]
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.sharedInstance.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        frc.delegate = self
+        return frc
     }()
     
     override func viewDidLoad() {
@@ -49,4 +58,24 @@ extension SavedWordViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     
+}
+
+extension SavedWordViewController: NSFetchedResultsControllerDelegate {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            self.tableView.insertRows(at: [newIndexPath!], with: .automatic)
+        case .delete:
+            self.tableView.deleteRows(at: [indexPath!], with: .automatic)
+        default:
+            break
+        }
+    }
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.endUpdates()
+    }
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
 }

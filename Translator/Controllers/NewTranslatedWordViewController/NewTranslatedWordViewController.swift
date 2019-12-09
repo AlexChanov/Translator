@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class NewTranslatedWordViewController: UIViewController {
     
@@ -50,6 +51,7 @@ class NewTranslatedWordViewController: UIViewController {
 
     }
     
+    
     // MARK: - Init properties
     private func setDataforCell(data: FinalResult, wordforTranlate: String) {
         dataForFilligCell = data
@@ -89,4 +91,30 @@ extension NewTranslatedWordViewController : UICollectionViewDelegateFlowLayout {
    
 }
 
+ // MARK: - CoreData
+extension NewTranslatedWordViewController {
+    
+    
+   
+    private func createTranslateEntityFrom(url: String) -> NSManagedObject? {
+        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+        if let translateEntity = NSEntityDescription.insertNewObject(forEntityName: "Translate", into: context) as? Translate {
+            translateEntity.imagePath = url
+            return translateEntity
+        }
+        return nil
+    }
+    
+    private func saveInCoreDataWith(array: [String]) {
+        _ = array.map{self.createTranslateEntityFrom(url: $0)}
+        do {
+            try CoreDataStack.sharedInstance.persistentContainer.viewContext.save()
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    
+    
+}
 

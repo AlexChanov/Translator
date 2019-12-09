@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CustomTabBarController: UITabBarController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -41,11 +42,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         window?.rootViewController = BaseTabBarController()
+        CoreDataStack.sharedInstance.applicationDocumentsDirectory()
+
         
         return true
     }
     
-
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        // Saves changes in the application's managed object context before the application terminates.
+        CoreDataStack.sharedInstance.saveContext()
+    }
     
     
 }
