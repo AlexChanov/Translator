@@ -106,16 +106,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C43A3A92396FFF1006E34E5 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				1CAFB7FD239D9439006CC71A /* MainViewController */,
-				1CAFB7FA239D93EA006CC71A /* SavedViewController */,
-				1CD4EB3C239C400100AC79A2 /* NewTranslatedWordViewController */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		1C47A928239E68F3009203C5 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,11 +129,37 @@
 			path = TranslatorTests;
 			sourceTree = "<group>";
 		};
+		1CA0A14C23A02F5C003FFE8A /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1CAFB7FD239D9439006CC71A /* MainViewController */,
+				1CAFB7FE239D9453006CC71A /* View */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		1CA0A14D23A02FBB003FFE8A /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				1CAFB7FA239D93EA006CC71A /* SavedViewController */,
+				1CAFB7FC239D941D006CC71A /* View */,
+			);
+			path = Saved;
+			sourceTree = "<group>";
+		};
+		1CA0A14E23A02FF1003FFE8A /* NewTranslatedWord */ = {
+			isa = PBXGroup;
+			children = (
+				1CD4EB3C239C400100AC79A2 /* NewTranslatedWordViewController */,
+				1CAFB7FB239D9408006CC71A /* View */,
+			);
+			path = NewTranslatedWord;
+			sourceTree = "<group>";
+		};
 		1CAFB7FA239D93EA006CC71A /* SavedViewController */ = {
 			isa = PBXGroup;
 			children = (
 				1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */,
-				1CAFB7FC239D941D006CC71A /* View */,
 			);
 			path = SavedViewController;
 			sourceTree = "<group>";
@@ -155,6 +171,7 @@
 				1CD4EB3D239C447200AC79A2 /* NewTranslatedWordCollectionViewCell.swift */,
 			);
 			name = View;
+			path = NewTranslatedWordViewController;
 			sourceTree = "<group>";
 		};
 		1CAFB7FC239D941D006CC71A /* View */ = {
@@ -169,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				1CD7CEDC2396F58900564C69 /* MainViewController.swift */,
-				1CAFB7FE239D9453006CC71A /* View */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -199,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				1CD4EB38239C3ECD00AC79A2 /* NewTranslatedWordViewController.swift */,
-				1CAFB7FB239D9408006CC71A /* View */,
 			);
 			path = NewTranslatedWordViewController;
 			sourceTree = "<group>";
@@ -225,7 +240,9 @@
 		1CD7CED92396F58900564C69 /* Translator */ = {
 			isa = PBXGroup;
 			children = (
-				1C43A3A92396FFF1006E34E5 /* Controllers */,
+				1CA0A14C23A02F5C003FFE8A /* MainScreen */,
+				1CA0A14E23A02FF1003FFE8A /* NewTranslatedWord */,
+				1CA0A14D23A02FBB003FFE8A /* Saved */,
 				1CD7CEF42396F68E00564C69 /* Model */,
 				1CD7CEF32396F66900564C69 /* NetworkServices */,
 				1C47A928239E68F3009203C5 /* CoreData */,
