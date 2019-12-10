@@ -12,6 +12,7 @@ class NewTranslatedWordCollectionViewCell: UICollectionViewCell {
     
     static let reuseId = "newTranslatedWordCollectionViewCell"
     
+    // MARK: - Private property
    private let imageView: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .pureGreen
@@ -20,6 +21,7 @@ class NewTranslatedWordCollectionViewCell: UICollectionViewCell {
         return image
     }()
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         

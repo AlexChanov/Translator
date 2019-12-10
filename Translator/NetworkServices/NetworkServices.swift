@@ -35,13 +35,6 @@ final class TranslateNetworkService {
         task.resume()
     }
     
-    /// Prepare url for request
-    ///
-    /// - Parameter params: API keys + translate data
-    /// - Returns: url
-   
-    
-
     private func makeRequestImage(with tags: String, completion: @escaping (Data?, ServiceError?) -> Void) {
         
         guard let url = apiWrapper.makeUrlForImage(tags: tags) else {
@@ -59,15 +52,12 @@ final class TranslateNetworkService {
         task.resume()
     }
     
-    
     func translate(_ text: String, lang: String, completion: @escaping (FinalResult?, ServiceError?) -> Void) {
         let params = ["text": text, "lang": lang]
-        
         
         var resultTranlate: TranslationResult?
         var resultImage = [Image]()
 
-        
         group.enter()
             self.makeRequestTranslate(with: params) { (data, error) in
             guard let data = data else {
@@ -82,7 +72,6 @@ final class TranslateNetworkService {
         }
         
         
-
       group.wait()
         guard let tag = resultTranlate?.text.first  else{ return }
         self.makeRequestImage(with: tag, completion: { (data, error) in
@@ -91,7 +80,6 @@ final class TranslateNetworkService {
                     completion(nil, error)
                     return
                 }
-            
             do {
                 let image = try JSONDecoder().decode([Image].self, from: data)
                 

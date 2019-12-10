@@ -10,10 +10,10 @@ import UIKit
 import CoreData
 
 
-class Storage {
+final class Storage {
     
+    // MARK: - Func for save in CoreData
     static func saveImage(_ url : String) -> ImageUrl {
-  
         let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "ImageUrl", in: context)
         let imageUrlEntity = NSManagedObject(entity: entity!, insertInto: context) as! ImageUrl

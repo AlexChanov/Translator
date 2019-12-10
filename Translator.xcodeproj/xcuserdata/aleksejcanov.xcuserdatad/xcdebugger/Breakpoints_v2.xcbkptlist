@@ -28,11 +28,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Translator/NetworkServices/NetworkServices.swift"
-            timestampString = "597531590.601678"
+            timestampString = "597690419.680438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "translate(_:lang:completion:)"
             landmarkType = "7">
          </BreakpointContent>

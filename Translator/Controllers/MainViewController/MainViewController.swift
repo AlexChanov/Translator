@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
     lazy var translateText: UITextField = {
         var textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .yellow
+        textField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         textField.borderStyle = .bezel
         textField.keyboardAppearance = .light
         textField.placeholder = "Введите слово для перевода"
@@ -84,13 +84,13 @@ class MainViewController: UIViewController {
         }
     }
     
+    // MARK: - Present child ViewController
     private func presentView(_ result: FinalResult) {
         let newTranslatedViewContriller = NewTranslatedWordViewController()
         newTranslatedViewContriller.dataForFilligCell = result
         newTranslatedViewContriller.wordforTranlate = self.wordsForTranslate.first ?? ""
        
         DispatchQueue.main.async {
-
             self.add(newTranslatedViewContriller, frame: CGRect(x: self.view.frame.minX, y: self.view.frame.minY-100, width: self.view.frame.width, height: self.view.frame.height*0.8))
             
         }
@@ -163,8 +163,7 @@ extension MainViewController : UITableViewDataSource, UITableViewDelegate {
     
 }
 
-//MARK: - TextField Delegate
-
+    //MARK: - TextField Delegate
 extension MainViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -176,8 +175,6 @@ extension MainViewController : UITextFieldDelegate {
         textField.text = ""
         activityIndicator.startAnimating()
         
-        
-        print(wordsForTranslate)
         return true
     }
 }

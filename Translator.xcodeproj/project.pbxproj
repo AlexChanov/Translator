@@ -154,6 +154,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1CBA491C239FFC910090E606 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1CD7CEFA2396F70100564C69 /* Extension + UIColor.swift */,
+				1CC6A8162399201000E0BC04 /* Extension + UIImageView.swift */,
+				1C84EB6D239FBC7C0002DD70 /* Extension + UITableView.swift */,
+				1CD4EB34239C3C0100AC79A2 /* Extension + UIViewController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		1CD4EB3C239C400100AC79A2 /* NewTranslatedWordViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +197,7 @@
 				1CD7CEF42396F68E00564C69 /* Model */,
 				1CD7CEF32396F66900564C69 /* NetworkServices */,
 				1C47A928239E68F3009203C5 /* CoreData */,
+				1CBA491C239FFC910090E606 /* Extension */,
 				1CD7CEF92396F6E200564C69 /* Support file */,
 			);
 			path = Translator;
@@ -217,10 +229,6 @@
 			children = (
 				1CD7CEEC2396F5E900564C69 /* BaseTabBarController.swift */,
 				1CD7CEDA2396F58900564C69 /* AppDelegate.swift */,
-				1CD7CEFA2396F70100564C69 /* Extension + UIColor.swift */,
-				1CC6A8162399201000E0BC04 /* Extension + UIImageView.swift */,
-				1C84EB6D239FBC7C0002DD70 /* Extension + UITableView.swift */,
-				1CD4EB34239C3C0100AC79A2 /* Extension + UIViewController.swift */,
 				1CD7CEE12396F58A00564C69 /* Assets.xcassets */,
 				1CD7CEE62396F58A00564C69 /* Info.plist */,
 				1CD7CEE32396F58A00564C69 /* LaunchScreen.storyboard */,

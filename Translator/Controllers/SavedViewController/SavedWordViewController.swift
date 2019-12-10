@@ -65,7 +65,7 @@ final class SavedWordViewController: UIViewController {
 }
 
 
-// MARK: - UITableViewDelegate & UITableViewDataSource
+    // MARK: - UITableViewDelegate & UITableViewDataSource
 extension SavedWordViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = fetchedhResultController.sections?.first?.numberOfObjects {
@@ -87,6 +87,7 @@ extension SavedWordViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // MARK: - Animation cell
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let animation = AnimationFactory.makeSlideIn(duration: 0.5, delayFactor: 0.05)
         let animator = Animator(animation: animation)
@@ -95,7 +96,7 @@ extension SavedWordViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-// MARK: - NSFetchedResultsControllerDelegate
+    // MARK: - NSFetchedResultsControllerDelegate
 extension SavedWordViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {

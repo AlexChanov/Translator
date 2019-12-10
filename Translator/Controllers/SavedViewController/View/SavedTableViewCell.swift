@@ -12,6 +12,7 @@ final class SavedTableViewCell: UITableViewCell {
 
     static let reuseId = "savedTableViewCell"
     
+    // MARK: - Private properties
    private let labelWord : UILabel = {
         let labelCell = UILabel()
         labelCell.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -24,7 +25,6 @@ final class SavedTableViewCell: UITableViewCell {
         return labelCell
     }()
     
-    
    private let ImageCell: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .pureGreen
@@ -33,12 +33,7 @@ final class SavedTableViewCell: UITableViewCell {
         return image
     }()
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
+    // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -61,14 +56,7 @@ final class SavedTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func setContentCellWith(data: Translate) {
-        
         DispatchQueue.main.async {
             guard let text = data.text, let word = data.wordForTranslate else { return }
             self.labelWord.text = "\(word) -> \(text)"

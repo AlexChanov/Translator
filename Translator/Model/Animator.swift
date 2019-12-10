@@ -20,9 +20,7 @@ final class Animator {
         guard !hasAnimatedAllCells else {
             return
         }
-        
         animation(cell, indexPath, tableView)
-        
         hasAnimatedAllCells = tableView.isLastVisibleCell(at: indexPath)
     }
 }

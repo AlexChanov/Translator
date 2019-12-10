@@ -10,10 +10,10 @@ import UIKit
 
 class CollectionViewCellForMainView: UICollectionViewCell {
     
-  static let reuseId = "MainCollectionViewCell"
+    static let reuseId = "MainCollectionViewCell"
     
-    
-    let imageView: UIImageView = {
+    // MARK: - Private properties
+    private let imageView: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .pureGreen
         image.clipsToBounds = true
@@ -22,7 +22,7 @@ class CollectionViewCellForMainView: UICollectionViewCell {
         return image
     }()
     
-    
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -31,14 +31,12 @@ class CollectionViewCellForMainView: UICollectionViewCell {
         imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive       = true
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive     = true
         imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive   = true
-        
-        
     }
     
     func setPhotoInCell(photo: Image?) {
         guard let photo = photo else { return }
         let url = photo.urls.small
-            self.imageView.loadImageUsingCacheWithURLString(url, placeHolder: UIImage(named: "placeholder"))
+        self.imageView.loadImageUsingCacheWithURLString(url, placeHolder: UIImage(named: "placeholder"))
     }
     
     required init?(coder aDecoder: NSCoder) {

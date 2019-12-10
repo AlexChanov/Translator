@@ -103,10 +103,8 @@ extension NewTranslatedWordViewController: UICollectionViewDelegate, UICollectio
         guard let dataForCell = dataForFilligCell else { return cell }
         cell.setPhotoInCell(photo: dataForCell.image[indexPath.row])
         return cell
-        
     }
-  
-}
+  }
 
     //MARK: - UICollectionViewDelegateFlowLayout
 extension NewTranslatedWordViewController : UICollectionViewDelegateFlowLayout {
@@ -116,29 +114,4 @@ extension NewTranslatedWordViewController : UICollectionViewDelegateFlowLayout {
         let sizeCell = CGSize(width: self.view.frame.width/2, height: self.view.frame.width/2)
         return sizeCell
     }
-    
-   
 }
-
-    // MARK: - CoreData удалить?
-extension NewTranslatedWordViewController {
-
-    private func createTranslateEntityFrom(url: String) -> NSManagedObject? {
-        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
-        if let translateEntity = NSEntityDescription.insertNewObject(forEntityName: "Translate", into: context) as? Translate {
-            translateEntity.imagePath = url
-            return translateEntity
-        }
-        return nil
-    }
-    
-    private func saveInCoreDataWith(array: [String]) {
-        _ = array.map{self.createTranslateEntityFrom(url: $0)}
-        do {
-            try CoreDataStack.sharedInstance.persistentContainer.viewContext.save()
-        } catch let error {
-            print(error)
-        }
-    }
-}
-
