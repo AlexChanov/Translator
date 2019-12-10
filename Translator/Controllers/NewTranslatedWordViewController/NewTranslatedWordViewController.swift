@@ -14,6 +14,7 @@ class NewTranslatedWordViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var saveTextLabel: UILabel!
     
     // MARK: - Action
     @IBAction func dismissButton(_ sender: Any) {
@@ -21,22 +22,10 @@ class NewTranslatedWordViewController: UIViewController {
         remove()
     }
     
-    // MARK: - Save in CoreData
     @IBAction func saveButton(_ sender: Any) {
-
-        guard let dataForFilligCell = dataForFilligCell else { return }
-        guard let wordWhichWasTranslated = dataForFilligCell.tranlationResult.text.first else { return }
-
-        let saveInfo = Storage.saveTranslateInfo(wordForTranslate: wordforTranlate, translatedWord: wordWhichWasTranslated)
-        
-        for value in dataForFilligCell.image {
-        let saveImage = Storage.saveImage(value.urls.small)
-        saveImage.translate = saveInfo
-        }
-        CoreDataStack.sharedInstance.saveContext()
+        showNotificationText()
+        saveData()
     }
-    
-    
     
     // MARK: - Public Properties
     var dataForFilligCell: FinalResult?
@@ -75,6 +64,30 @@ class NewTranslatedWordViewController: UIViewController {
         guard let translated = data.tranlationResult.text.first else { return }
         textLabel.text = "\(wordforTranlate) - \(translated)"
     }
+    
+    // MARK: - Save in CoreData
+    private func saveData() {
+        guard let dataForFilligCell = dataForFilligCell else { return }
+        guard let wordWhichWasTranslated = dataForFilligCell.tranlationResult.text.first else { return }
+        
+        let saveInfo = Storage.saveTranslateInfo(wordForTranslate: wordforTranlate, translatedWord: wordWhichWasTranslated)
+        for value in dataForFilligCell.image {
+            let saveImage = Storage.saveImage(value.urls.small)
+            saveImage.translate = saveInfo
+        }
+        CoreDataStack.sharedInstance.saveContext()
+    }
+    
+    private func showNotificationText() {
+        saveTextLabel.alpha = 1.0
+        UIView.animate(withDuration: 1.0,
+                       delay: 0,
+                       options: .curveLinear,
+                       animations: { self.saveTextLabel.alpha = .leastNonzeroMagnitude },
+                       completion: {_ in
+                        self.saveTextLabel.text = ""
+        })
+    }
 }
 
     //MARK: - CollectionView DataSource and Delegate
@@ -108,11 +121,9 @@ extension NewTranslatedWordViewController : UICollectionViewDelegateFlowLayout {
    
 }
 
- // MARK: - CoreData
+    // MARK: - CoreData удалить?
 extension NewTranslatedWordViewController {
-    
-    
-   
+
     private func createTranslateEntityFrom(url: String) -> NSManagedObject? {
         let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
         if let translateEntity = NSEntityDescription.insertNewObject(forEntityName: "Translate", into: context) as? Translate {
