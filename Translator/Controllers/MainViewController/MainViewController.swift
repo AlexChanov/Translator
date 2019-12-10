@@ -96,7 +96,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    private func addElementToArrayInReverseOrder<T>( array:inout [T],newElement: T) {
+     func addElementToArrayInReverseOrder<T>( array:inout [T],newElement: T) {
         let temproaryArray = array
         array.removeAll()
         array.append(newElement)
@@ -130,7 +130,6 @@ class MainViewController: UIViewController {
             activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             ])
     }
-    
 }
 
     //MARK: - TableView DataSource and Delegate

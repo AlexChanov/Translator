@@ -59,9 +59,10 @@ class NewTranslatedWordViewController: UIViewController {
     
     
     // MARK: - Init properties
-    private func setDataforCell(data: FinalResult, wordforTranlate: String) {
+    func setDataforCell(data: FinalResult, wordforTranlate: String) {
         dataForFilligCell = data
         guard let translated = data.tranlationResult.text.first else { return }
+        guard textLabel != nil, textLabel.text != nil else { return }
         textLabel.text = "\(wordforTranlate) - \(translated)"
     }
     
