@@ -105,8 +105,7 @@ extension NewTranslatedWordViewController: UICollectionViewDelegate, UICollectio
         return cell
         
     }
-    
-    
+  
 }
 
     //MARK: - UICollectionViewDelegateFlowLayout
@@ -141,8 +140,5 @@ extension NewTranslatedWordViewController {
             print(error)
         }
     }
-    
-    
-    
 }
 

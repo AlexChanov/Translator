@@ -10,6 +10,9 @@
 		1C43A3AC23970057006E34E5 /* SavedWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */; };
 		1C47A923239E66D8009203C5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C47A921239E66D8009203C5 /* Model.xcdatamodeld */; };
 		1C47A92A239E6925009203C5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C47A929239E6924009203C5 /* CoreDataStack.swift */; };
+		1C84EB6A239FBB9C0002DD70 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C84EB69239FBB9C0002DD70 /* Animator.swift */; };
+		1C84EB6C239FBBC40002DD70 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C84EB6B239FBBC40002DD70 /* Animations.swift */; };
+		1C84EB6E239FBC7C0002DD70 /* Extension + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C84EB6D239FBC7C0002DD70 /* Extension + UITableView.swift */; };
 		1CAE95E1239EB78A00711E31 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAE95E0239EB78A00711E31 /* Storage.swift */; };
 		1CAE95EE239EBD1700711E31 /* ImageUrl+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAE95EA239EBD1700711E31 /* ImageUrl+CoreDataClass.swift */; };
 		1CAE95EF239EBD1700711E31 /* ImageUrl+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAE95EB239EBD1700711E31 /* ImageUrl+CoreDataProperties.swift */; };
@@ -40,6 +43,9 @@
 		1C43A3AB23970057006E34E5 /* SavedWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWordViewController.swift; sourceTree = "<group>"; };
 		1C47A922239E66D8009203C5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1C47A929239E6924009203C5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		1C84EB69239FBB9C0002DD70 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		1C84EB6B239FBBC40002DD70 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		1C84EB6D239FBC7C0002DD70 /* Extension + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableView.swift"; sourceTree = "<group>"; };
 		1CAE95E0239EB78A00711E31 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		1CAE95EA239EBD1700711E31 /* ImageUrl+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageUrl+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1CAE95EB239EBD1700711E31 /* ImageUrl+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageUrl+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -200,6 +206,8 @@
 				1CD7CEF52396F6A500564C69 /* ServiceError.swift */,
 				1CD7CEF72396F6C400564C69 /* TranslateResult.swift */,
 				1CAE95E0239EB78A00711E31 /* Storage.swift */,
+				1C84EB69239FBB9C0002DD70 /* Animator.swift */,
+				1C84EB6B239FBBC40002DD70 /* Animations.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +219,7 @@
 				1CD7CEDA2396F58900564C69 /* AppDelegate.swift */,
 				1CD7CEFA2396F70100564C69 /* Extension + UIColor.swift */,
 				1CC6A8162399201000E0BC04 /* Extension + UIImageView.swift */,
+				1C84EB6D239FBC7C0002DD70 /* Extension + UITableView.swift */,
 				1CD4EB34239C3C0100AC79A2 /* Extension + UIViewController.swift */,
 				1CD7CEE12396F58A00564C69 /* Assets.xcassets */,
 				1CD7CEE62396F58A00564C69 /* Info.plist */,
@@ -297,12 +306,15 @@
 				1CD4EB3E239C447200AC79A2 /* NewTranslatedWordCollectionViewCell.swift in Sources */,
 				1CD7CEDD2396F58900564C69 /* MainViewController.swift in Sources */,
 				1CD7CEDB2396F58900564C69 /* AppDelegate.swift in Sources */,
+				1C84EB6C239FBBC40002DD70 /* Animations.swift in Sources */,
+				1C84EB6E239FBC7C0002DD70 /* Extension + UITableView.swift in Sources */,
 				1CD7CEFE2396F74D00564C69 /* TranslateTableViewCell.swift in Sources */,
 				1CC6A8152398FC2A00E0BC04 /* CollectionViewCellForMainView.swift in Sources */,
 				1C47A923239E66D8009203C5 /* Model.xcdatamodeld in Sources */,
 				1CD4EB35239C3C0100AC79A2 /* Extension + UIViewController.swift in Sources */,
 				1CAFB7F9239D9222006CC71A /* SavedTableViewCell.swift in Sources */,
 				1C43A3AC23970057006E34E5 /* SavedWordViewController.swift in Sources */,
+				1C84EB6A239FBB9C0002DD70 /* Animator.swift in Sources */,
 				1CD4EB3A239C3ECD00AC79A2 /* NewTranslatedWordViewController.swift in Sources */,
 				1CAE95E1239EB78A00711E31 /* Storage.swift in Sources */,
 				1C47A92A239E6925009203C5 /* CoreDataStack.swift in Sources */,

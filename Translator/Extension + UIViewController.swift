@@ -26,7 +26,6 @@ extension UIViewController {
         view.addSubview(child.view)
         child.didMove(toParent: self)
         
-        
     }
     
     func remove() {
