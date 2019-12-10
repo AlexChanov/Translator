@@ -17,7 +17,6 @@ extension Translate {
         return NSFetchRequest<Translate>(entityName: "Translate")
     }
 
-    @NSManaged public var imagePath: String?
     @NSManaged public var text: String?
     @NSManaged public var wordForTranslate: String?
     @NSManaged public var imageUrl: NSSet?

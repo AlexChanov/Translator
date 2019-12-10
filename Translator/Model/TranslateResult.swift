@@ -25,9 +25,7 @@ struct Image : Codable {
 }
 
 struct URLs : Codable {
-    let thumb : String
     let small: String
-    let full: String
 }
 
 class FinalResult {

@@ -5,13 +5,12 @@
         <relationship name="translate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Translate" inverseName="imageUrl" inverseEntity="Translate" syncable="YES"/>
     </entity>
     <entity name="Translate" representedClassName="Translate" syncable="YES">
-        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wordForTranslate" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="imageUrl" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ImageUrl" inverseName="translate" inverseEntity="ImageUrl" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Translate" positionX="-54" positionY="-9" width="128" height="105"/>
         <element name="ImageUrl" positionX="-54" positionY="18" width="128" height="75"/>
+        <element name="Translate" positionX="-54" positionY="-9" width="128" height="90"/>
     </elements>
 </model>
