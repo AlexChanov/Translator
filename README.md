@@ -11,4 +11,3 @@ Translator
 Хранение данных обеспечивает Core Data, а вывод данных в таблицу класс NSFetchedResultsController.
 Проет реализован без использования Storyboard.
 ![](Анимация1.gif)
-![](Анимация2.gif)
