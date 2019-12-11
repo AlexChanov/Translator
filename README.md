@@ -10,3 +10,5 @@ Translator - переводчик с русского языка на англи
 Хранение данных обеспечивает Core Data, а вывод данных в таблицу класс NSFetchedResultsController.
 Проект реализован без использования Storyboard.
 <img src="Анимация1.gif" width="300" height="590">
+
+<img src="Анимация2.gif" width="300" height="590">
