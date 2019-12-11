@@ -12,6 +12,9 @@ final class TranslateNetworkService {
     
     let apiWrapper = APIWrapper()
     let group = DispatchGroup()
+    let config = URLSessionConfiguration.default
+    lazy var session = URLSession(configuration: config)
+    
     
     /// Perform request with completion
     ///
@@ -25,7 +28,7 @@ final class TranslateNetworkService {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 completion(nil, .remoteServer)
                 return
@@ -42,7 +45,7 @@ final class TranslateNetworkService {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 completion(nil, .remoteServer)
                 return
